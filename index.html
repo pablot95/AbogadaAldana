@@ -171,7 +171,7 @@
     <section class="process section-padding bg-dark">
         <div class="container">
             <div class="section-title white-text" data-aos="fade-up">
-                <h2>Tu Proceso Legal, Simplificado</h2>
+                <h2 style="color: burlywood;">Tu Proceso Legal, Simplificado</h2>
                 <div class="divider gold-bg"></div>
             </div>
             <div class="process-steps">
@@ -247,7 +247,7 @@
                             <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
                             <div>
                                 <h4>WhatsApp Directo</h4>
-                                <a href="https://wa.me/5491123463168" target="_blank" class="contact-link">+54 9 11 2346 3168</a>
+                                <a href="https://wa.me/5491123463168" target="_blank" class="contact-link">+54 9 11 2346-3168</a>
                             </div>
                         </div>
                         
@@ -261,9 +261,7 @@
                     </div>
 
                     <div class="social-links-contact">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/aldanasilva.legales?igsh=Z2l5NWcxanlsZmdj&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -271,20 +269,20 @@
                     <h3>Consulta Online</h3>
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="text" placeholder="Nombre completo" required>
+                            <input type="text" name="user_name" placeholder="Nombre completo" required>
                             <span class="focus-border"></span>
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Teléfono / Celular" required>
+                            <input type="tel" name="user_phone" placeholder="Teléfono / Celular" required>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Correo Electrónico" required>
+                        <input type="email" name="user_email" placeholder="Correo Electrónico" required>
                         <span class="focus-border"></span>
                     </div>
                     <div class="form-group">
-                        <select>
+                        <select name="contact_reason">
                             <option value="" disabled selected>Motivo de consulta</option>
                             <option value="familia">Derecho de Familia</option>
                             <option value="sucesion">Sucesiones</option>
@@ -294,7 +292,7 @@
                         <span class="focus-border"></span>
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" placeholder="Contame brevemente tu situación..." required></textarea>
+                        <textarea name="message" rows="4" placeholder="Contame brevemente tu situación..." required></textarea>
                         <span class="focus-border"></span>
                     </div>
                     <button type="submit" class="btn btn-gold btn-block hover-lift">
@@ -363,8 +361,7 @@
                 <h4 class="footer-logo">ALDANA SILVA</h4>
                 <p>Abogada</p>
                 <div class="footer-socials">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/aldanasilva.legales?igsh=Z2l5NWcxanlsZmdj&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -379,12 +376,19 @@
             <div class="footer-legal">
                 <p>&copy; 2026 Estudio Jurídico Aldana Silva.</p>
                 <p>Todos los derechos reservados.</p>
+                <p class="developer-credit">Developed and Designed by: <a href="http://www.gokywebs.net" target="_blank">Gokywebs.net</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("gggJxqDaTMYv4LphL");
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

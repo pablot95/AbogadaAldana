@@ -139,26 +139,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* -----------------------------------------------
-       6. Formulario Simple
+       6. Formulario con EmailJS
     ----------------------------------------------- */
     const contactForm = document.getElementById('contactForm');
     
     if(contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Simulación de envío
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
             
-            btn.innerText = 'Enviando...';
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML; // Guardar HTML para mantener el icono
+            
+            btn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
             btn.disabled = true;
 
-            setTimeout(() => {
-                alert('Gracias por su mensaje. Nos pondremos en contacto a la brevedad.');
-                contactForm.reset();
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }, 1500);
+            const serviceID = 'service_wyt85sr';
+            const templateID = 'template_c65e1ls';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.innerHTML = 'Enviado <i class="fa-solid fa-check"></i>';
+                    alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                }, (err) => {
+                    btn.innerHTML = 'Error <i class="fa-solid fa-xmark"></i>';
+                    alert('Ocurrió un error al enviar el mensaje. Intente nuevamente o utilice WhatsApp.');
+                    console.error('FAILED...', err);
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 3000);
+                });
         });
     }
 

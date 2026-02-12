@@ -979,6 +979,9 @@ ul {
 .footer-links ul li a:hover { color: var(--color-gold); padding-left: 5px; }
 
 .footer-legal p { font-size: 0.85rem; color: #666; }
+.footer-legal .developer-credit { margin-top: 10px; font-size: 0.75rem; }
+.footer-legal .developer-credit a { color: #888; text-decoration: none; transition: color 0.3s; }
+.footer-legal .developer-credit a:hover { color: var(--color-gold); }
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
